@@ -9,6 +9,10 @@ import java.nio.file.Paths;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+/*
+ * initial version 
+ * 
+ */
 public class NSEDownloader {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {

@@ -13,8 +13,13 @@ public class NSEDownloadUtility {
      * Downloads a file from a URL
      * @param fileURL HTTP URL of the file to be downloaded
      * @param saveDir path of the directory to save the file
-     * @throws IOException
+     * @throws IOException 
      */
+	/*
+	 * initial version 
+	 * 
+	 */
+	
     public static void downloadFile(String fileURL, String saveDir)
             throws IOException {
         URL url = new URL(fileURL);

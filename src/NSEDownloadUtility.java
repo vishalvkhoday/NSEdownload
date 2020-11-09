@@ -84,12 +84,13 @@ public class NSEDownloadUtility {
 		httpConn.disconnect();
 	}
 
-	public static void extractTheFileFromZipFolder(String saveDir) throws IOException, FileNotFoundException {
+	public static void extractTheFileFromZipFolder(String saveDir, String inputZipFileLocationAndName)
+			throws IOException, FileNotFoundException {
 		byte[] buffer = new byte[2048];
 		Path outDir = Paths.get(saveDir);
-		String inputZipFileName = "C:/nse-download/cm30OCT2020bhav.csv.zip";
+		// String inputZipFileName = "C:/nse-download/cm30OCT2020bhav.csv.zip";
 
-		try (FileInputStream fis = new FileInputStream(inputZipFileName);
+		try (FileInputStream fis = new FileInputStream(inputZipFileLocationAndName);
 				BufferedInputStream bis = new BufferedInputStream(fis);
 				ZipInputStream stream = new ZipInputStream(bis)) {
 
@@ -110,9 +111,10 @@ public class NSEDownloadUtility {
 		}
 	}
 
-	public static void convertCSVFileToTextFile() throws IOException {
-		File inputCSVFileDirPath = new File("C:/nse-download/cm30OCT2020bhav.csv");
-		File outputTxtFileDirPath = new File("C:/nse-download/cm30OCT2020bhav.txt");
+	public static void convertCSVFileToTextFile(String inputExtractedZipFileLocationAndName,
+			String outputFileNameInTextFormat) throws IOException {
+		File inputCSVFileDirPath = new File(inputExtractedZipFileLocationAndName);
+		File outputTxtFileDirPath = new File(outputFileNameInTextFormat);
 		BufferedReader brReadCSVFile = null;// For Read CSV File
 		BufferedWriter brWriteCSVDataToTextFile = null;// For Write a file in which you want to write
 		String words = "";
@@ -150,7 +152,7 @@ public class NSEDownloadUtility {
 				brWriteCSVDataToTextFile.write(",");
 				brWriteCSVDataToTextFile.write(code[12]);
 				brWriteCSVDataToTextFile.write("\n");
-				System.out.println("code1= " + code[0] + " , code2=" + code[1]);
+				// System.out.println("code1= " + code[0] + " , code2=" + code[1]);
 
 			}
 

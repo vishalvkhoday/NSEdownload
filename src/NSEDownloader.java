@@ -36,7 +36,8 @@ public class NSEDownloader {
 
 		NSEDownloadUtility.extractTheFileFromZipFolder(saveDir, inputZipFileLocationAndName);
 
-		NSEDownloadUtility.convertCSVFileToTextFile(inputExtractedZipFileLocationAndName, outputFileNameInTextFormat);
+		NSEDownloadUtility.convertCSVFileToTextFile(inputExtractedZipFileLocationAndName, outputFileNameInTextFormat,
+				year, month, day);
 
 	}
 

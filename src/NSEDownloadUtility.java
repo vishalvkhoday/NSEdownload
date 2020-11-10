@@ -88,7 +88,6 @@ public class NSEDownloadUtility {
 			throws IOException, FileNotFoundException {
 		byte[] buffer = new byte[2048];
 		Path outDir = Paths.get(saveDir);
-		// String inputZipFileName = "C:/nse-download/cm30OCT2020bhav.csv.zip";
 
 		try (FileInputStream fis = new FileInputStream(inputZipFileLocationAndName);
 				BufferedInputStream bis = new BufferedInputStream(fis);
@@ -112,7 +111,7 @@ public class NSEDownloadUtility {
 	}
 
 	public static void convertCSVFileToTextFile(String inputExtractedZipFileLocationAndName,
-			String outputFileNameInTextFormat) throws IOException {
+			String outputFileNameInTextFormat, String year, String month, String day) throws IOException {
 		File inputCSVFileDirPath = new File(inputExtractedZipFileLocationAndName);
 		File outputTxtFileDirPath = new File(outputFileNameInTextFormat);
 		BufferedReader brReadCSVFile = null;// For Read CSV File
@@ -124,11 +123,17 @@ public class NSEDownloadUtility {
 
 			brReadCSVFile = new BufferedReader(new FileReader(inputCSVFileDirPath));
 			brWriteCSVDataToTextFile = new BufferedWriter(new FileWriter(outputTxtFileDirPath));
+			boolean skip = true;
 			while ((words = brReadCSVFile.readLine()) != null) {
+				if (skip) {
+					skip = false;
+					continue;
+				}
 				String[] code = words.split(separator);
 				brWriteCSVDataToTextFile.write(code[0]);
 				brWriteCSVDataToTextFile.write(",");
-				brWriteCSVDataToTextFile.write(code[10]);
+				// brWriteCSVDataToTextFile.write(code[10]);
+				brWriteCSVDataToTextFile.append(year + month + day);
 				brWriteCSVDataToTextFile.write(",");
 				brWriteCSVDataToTextFile.write(code[1]);
 				brWriteCSVDataToTextFile.write(",");
@@ -150,8 +155,9 @@ public class NSEDownloadUtility {
 				// brWriteCSVDataToTextFile.write(",");
 
 				brWriteCSVDataToTextFile.write(code[11]);
-				// brWriteCSVDataToTextFile.write(",");
+				brWriteCSVDataToTextFile.write(",");
 				// brWriteCSVDataToTextFile.write(code[12]);
+				brWriteCSVDataToTextFile.append('0');
 				brWriteCSVDataToTextFile.write("\n");
 				// System.out.println("code1= " + code[0] + " , code2=" + code[1]);
 

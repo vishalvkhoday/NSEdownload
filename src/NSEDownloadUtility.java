@@ -135,8 +135,8 @@ public class NSEDownloadUtility {
 				// brWriteCSVDataToTextFile.write(code[10]);
 				brWriteCSVDataToTextFile.append(year + month + day);
 				brWriteCSVDataToTextFile.write(",");
-				brWriteCSVDataToTextFile.write(code[1]);
-				brWriteCSVDataToTextFile.write(",");
+				//brWriteCSVDataToTextFile.write(code[1]);
+				//brWriteCSVDataToTextFile.write(",");
 				brWriteCSVDataToTextFile.write(code[2]);
 				brWriteCSVDataToTextFile.write(",");
 				brWriteCSVDataToTextFile.write(code[3]);

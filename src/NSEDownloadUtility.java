@@ -128,6 +128,8 @@ public class NSEDownloadUtility {
 				String[] code = words.split(separator);
 				brWriteCSVDataToTextFile.write(code[0]);
 				brWriteCSVDataToTextFile.write(",");
+				brWriteCSVDataToTextFile.write(code[10]);
+				brWriteCSVDataToTextFile.write(",");
 				brWriteCSVDataToTextFile.write(code[1]);
 				brWriteCSVDataToTextFile.write(",");
 				brWriteCSVDataToTextFile.write(code[2]);
@@ -138,19 +140,18 @@ public class NSEDownloadUtility {
 				brWriteCSVDataToTextFile.write(",");
 				brWriteCSVDataToTextFile.write(code[5]);
 				brWriteCSVDataToTextFile.write(",");
-				brWriteCSVDataToTextFile.write(code[6]);
-				brWriteCSVDataToTextFile.write(",");
-				brWriteCSVDataToTextFile.write(code[7]);
-				brWriteCSVDataToTextFile.write(",");
+				// brWriteCSVDataToTextFile.write(code[6]);
+				// brWriteCSVDataToTextFile.write(",");
+				// brWriteCSVDataToTextFile.write(code[7]);
+				// brWriteCSVDataToTextFile.write(",");
 				brWriteCSVDataToTextFile.write(code[8]);
 				brWriteCSVDataToTextFile.write(",");
-				brWriteCSVDataToTextFile.write(code[9]);
-				brWriteCSVDataToTextFile.write(",");
-				brWriteCSVDataToTextFile.write(code[10]);
-				brWriteCSVDataToTextFile.write(",");
+				// brWriteCSVDataToTextFile.write(code[9]);
+				// brWriteCSVDataToTextFile.write(",");
+
 				brWriteCSVDataToTextFile.write(code[11]);
-				brWriteCSVDataToTextFile.write(",");
-				brWriteCSVDataToTextFile.write(code[12]);
+				// brWriteCSVDataToTextFile.write(",");
+				// brWriteCSVDataToTextFile.write(code[12]);
 				brWriteCSVDataToTextFile.write("\n");
 				// System.out.println("code1= " + code[0] + " , code2=" + code[1]);
 
@@ -171,6 +172,39 @@ public class NSEDownloadUtility {
 			brReadCSVFile.close();
 			brWriteCSVDataToTextFile.close();
 		}
+	}
+
+	public static String getMonthName(String month) {
+
+		String monthName = null;
+
+		if (month.equals("1")) {
+			return monthName = "JAN";
+		} else if (month.equals("2")) {
+			return monthName = "FEB";
+		} else if (month.equals("3")) {
+			return monthName = "MAR";
+		} else if (month.equals("4")) {
+			return monthName = "APR";
+		} else if (month.equals("5")) {
+			return monthName = "MAY";
+		} else if (month.equals("6")) {
+			return monthName = "JUN";
+		} else if (month.equals("7")) {
+			return monthName = "JUL";
+		} else if (month.equals("8")) {
+			return monthName = "AUG";
+		} else if (month.equals("9")) {
+			return monthName = "SEP";
+		} else if (month.equals("10")) {
+			return monthName = "OCT";
+		} else if (month.equals("11")) {
+			return monthName = "NOV";
+		} else if (month.equals("12")) {
+			return monthName = "DEC";
+		}
+		return monthName;
+
 	}
 
 }

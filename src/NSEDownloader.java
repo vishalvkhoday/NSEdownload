@@ -23,7 +23,7 @@ public class NSEDownloader {
 				+ day + convertedMonth + year + "bhav.csv.zip";
 		String saveDir = "C:/nse-download";
 
-		String inputZipFileLocationAndName = saveDir +"/cm" + day + convertedMonth + year + "bhav.csv.zip";
+		String inputZipFileLocationAndName = saveDir + "/cm" + day + convertedMonth + year + "bhav.csv.zip";
 
 		String inputExtractedZipFileLocationAndName = saveDir + "/cm" + day + convertedMonth + year + "bhav.csv";
 		String outputFileNameInTextFormat = saveDir + "/" + year + month + day + ".txt";

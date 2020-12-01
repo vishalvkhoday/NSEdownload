@@ -77,7 +77,7 @@ public class NSEDownloadUtility {
 			outputStream.close();
 			inputStream.close();
 
-			System.out.println("File downloaded");
+			System.out.println("Files downloaded succesfully...");
 		} else {
 			System.out.println("No file to download. Server replied HTTP code: " + responseCode);
 		}
@@ -212,6 +212,21 @@ public class NSEDownloadUtility {
 		}
 		return monthName;
 
+	}
+
+	// delete .csv and .zip files
+	public static void deleteFiles(String saveDir) {
+
+		File folder = new File(saveDir);
+
+		File[] files = folder.listFiles();
+
+		for (File file : files) {
+			if (file.getName().contains(".csv") || file.getName().contains(".zip")) {
+				file.delete();
+			}
+		}
+		System.out.println("Files Deleted Succesfully...");
 	}
 
 }

@@ -130,7 +130,7 @@ public class NSEDownloadUtility {
 					continue;
 				}
 				String[] code = words.split(separator);
-				if (code[1].equals("EQ") || code[1].equals("DE")) {
+				if (code[1].equals("EQ") || code[1].equals("BE")) {
 					brWriteCSVDataToTextFile.write(code[0]);
 					brWriteCSVDataToTextFile.write(",");
 					// brWriteCSVDataToTextFile.write(code[10]);

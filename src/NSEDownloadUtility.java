@@ -185,23 +185,23 @@ public class NSEDownloadUtility {
 
 		String monthName = null;
 
-		if (month.equals("1")) {
+		if (month.equals("01")) {
 			return monthName = "JAN";
-		} else if (month.equals("2")) {
+		} else if (month.equals("02")) {
 			return monthName = "FEB";
-		} else if (month.equals("3")) {
+		} else if (month.equals("03")) {
 			return monthName = "MAR";
-		} else if (month.equals("4")) {
+		} else if (month.equals("04")) {
 			return monthName = "APR";
-		} else if (month.equals("5")) {
+		} else if (month.equals("05")) {
 			return monthName = "MAY";
-		} else if (month.equals("6")) {
+		} else if (month.equals("06")) {
 			return monthName = "JUN";
-		} else if (month.equals("7")) {
+		} else if (month.equals("07")) {
 			return monthName = "JUL";
-		} else if (month.equals("8")) {
+		} else if (month.equals("08")) {
 			return monthName = "AUG";
-		} else if (month.equals("9")) {
+		} else if (month.equals("09")) {
 			return monthName = "SEP";
 		} else if (month.equals("10")) {
 			return monthName = "OCT";

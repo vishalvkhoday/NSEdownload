@@ -122,58 +122,60 @@ public class NSEDownloadUtility {
 		try {
 
 			brReadCSVFile = new BufferedReader(new FileReader(inputCSVFileDirPath));
-			brWriteCSVDataToTextFile = new BufferedWriter(new FileWriter(outputTxtFileDirPath));
-			boolean skip = true;
-			while ((words = brReadCSVFile.readLine()) != null) {
-				if (skip) {
-					skip = false;
-					continue;
-				}
-				String[] code = words.split(separator);
-				if (code[1].equals("EQ") || code[1].equals("BE")) {
-					brWriteCSVDataToTextFile.write(code[0]);
-					brWriteCSVDataToTextFile.write(",");
-					// brWriteCSVDataToTextFile.write(code[10]);
-					brWriteCSVDataToTextFile.append(year + month + day);
-					brWriteCSVDataToTextFile.write(",");
-					// brWriteCSVDataToTextFile.write(code[1]);
-					// brWriteCSVDataToTextFile.write(",");
-					brWriteCSVDataToTextFile.write(code[2]);
-					brWriteCSVDataToTextFile.write(",");
-					brWriteCSVDataToTextFile.write(code[3]);
-					brWriteCSVDataToTextFile.write(",");
-					brWriteCSVDataToTextFile.write(code[4]);
-					brWriteCSVDataToTextFile.write(",");
-					brWriteCSVDataToTextFile.write(code[5]);
-					brWriteCSVDataToTextFile.write(",");
-					// brWriteCSVDataToTextFile.write(code[6]);
-					// brWriteCSVDataToTextFile.write(",");
-					// brWriteCSVDataToTextFile.write(code[7]);
-					// brWriteCSVDataToTextFile.write(",");
-					brWriteCSVDataToTextFile.write(code[8]);
-					brWriteCSVDataToTextFile.write(",");
-					// brWriteCSVDataToTextFile.write(code[9]);
-					// brWriteCSVDataToTextFile.write(",");
-					// brWriteCSVDataToTextFile.write(code[11]);
-					// brWriteCSVDataToTextFile.write(",");
-					// brWriteCSVDataToTextFile.write(code[12]);
-					brWriteCSVDataToTextFile.append('0');
-					brWriteCSVDataToTextFile.write("\n");
-					// System.out.println("code1= " + code[0] + " , code2=" + code[1]);
-				}
+			if (brReadCSVFile != null) {
+				brWriteCSVDataToTextFile = new BufferedWriter(new FileWriter(outputTxtFileDirPath));
+				boolean skip = true;
+				while ((words = brReadCSVFile.readLine()) != null) {
+					if (skip) {
+						skip = false;
+						continue;
+					}
+					String[] code = words.split(separator);
+					if (code[1].equals("EQ") || code[1].equals("BE")) {
+						brWriteCSVDataToTextFile.write(code[0]);
+						brWriteCSVDataToTextFile.write(",");
+						// brWriteCSVDataToTextFile.write(code[10]);
+						brWriteCSVDataToTextFile.append(year + month + day);
+						brWriteCSVDataToTextFile.write(",");
+						// brWriteCSVDataToTextFile.write(code[1]);
+						// brWriteCSVDataToTextFile.write(",");
+						brWriteCSVDataToTextFile.write(code[2]);
+						brWriteCSVDataToTextFile.write(",");
+						brWriteCSVDataToTextFile.write(code[3]);
+						brWriteCSVDataToTextFile.write(",");
+						brWriteCSVDataToTextFile.write(code[4]);
+						brWriteCSVDataToTextFile.write(",");
+						brWriteCSVDataToTextFile.write(code[5]);
+						brWriteCSVDataToTextFile.write(",");
+						// brWriteCSVDataToTextFile.write(code[6]);
+						// brWriteCSVDataToTextFile.write(",");
+						// brWriteCSVDataToTextFile.write(code[7]);
+						// brWriteCSVDataToTextFile.write(",");
+						brWriteCSVDataToTextFile.write(code[8]);
+						brWriteCSVDataToTextFile.write(",");
+						// brWriteCSVDataToTextFile.write(code[9]);
+						// brWriteCSVDataToTextFile.write(",");
+						// brWriteCSVDataToTextFile.write(code[11]);
+						// brWriteCSVDataToTextFile.write(",");
+						// brWriteCSVDataToTextFile.write(code[12]);
+						brWriteCSVDataToTextFile.append('0');
+						brWriteCSVDataToTextFile.write("\n");
+						// System.out.println("code1= " + code[0] + " , code2=" + code[1]);
+					}
 
+				}
 			}
 
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			e.getMessage();
 		} catch (IOException e) {
-			e.printStackTrace();
+			e.getMessage();
 		} finally {
 			if (brReadCSVFile != null) {
 				try {
 					brReadCSVFile.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					e.getMessage();
 				}
 			}
 			brReadCSVFile.close();

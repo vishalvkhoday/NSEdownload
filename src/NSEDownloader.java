@@ -11,10 +11,9 @@ public class NSEDownloader {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		String startDate = "2021/02/06"; //"2020/10/30"
-
 		/*
-		 * String startDate = args[0]; String startDate = null;
+		 * String startDate = "2021/02/06"; //"2020/10/30" String startDate = args[0];
+		 * String startDate = null;
 		 * System.out.println("Values in args="+args.toString());
 		 * 
 		 * if (args[0].equals(null) || args[0].isEmpty() || args[0].length() == 0) {
@@ -23,6 +22,7 @@ public class NSEDownloader {
 		 * startDate = args[0]; }
 		 */
 
+		String startDate = args[0];
 		String dateParts[] = startDate.split("/");
 
 		String year = dateParts[0];
@@ -31,8 +31,9 @@ public class NSEDownloader {
 
 		String convertedMonth = NSEDownloadUtility.getMonthName(month);
 
-		//String fileURL = "https://archives.nseindia.com/content/historical/EQUITIES/" + year + "/" + convertedMonth
-		//		+ "/cm" + day + convertedMonth + year + "bhav.csv.zip";
+		// String fileURL = "https://archives.nseindia.com/content/historical/EQUITIES/"
+		// + year + "/" + convertedMonth
+		// + "/cm" + day + convertedMonth + year + "bhav.csv.zip";
 
 		String fileURL = "https://www1.nseindia.com/content/historical/EQUITIES/" + year + "/" + convertedMonth + "/cm"
 				+ day + convertedMonth + year + "bhav.csv.zip";
